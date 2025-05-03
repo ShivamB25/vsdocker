@@ -39,7 +39,8 @@ install_yuuno() {
     pip install notebook jupyterlab
     git clone https://github.com/Irrational-Encoding-Wizardry/yuuno.git
     # Update @jupyterlab/builder dependency before building
-    (cd yuuno/packages/jupyterlab && npm install --save-dev @jupyterlab/builder@^4.4.1)
+    # Update @jupyterlab/builder dependency before building, ignoring peer conflicts
+    (cd yuuno/packages/jupyterlab && npm install --legacy-peer-deps @jupyterlab/builder@^4.4.1)
     (cd yuuno && _build_yuuno)
     mkdir -p "$D1"
     cp yuuno/dist/* "$D1"/
