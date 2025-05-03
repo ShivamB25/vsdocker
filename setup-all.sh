@@ -11,9 +11,9 @@ invoke() {
 }
 
 install_mambapkgs() {
-    mamba install -y jupyterlab
-    mamba install -y -c conda-forge vapoursynth wget
-    mamba install -y -c tongyuantongyu vapoursynth-ffms2 vapoursynth-cycmunet vapoursynth-mvsfunc vapoursynth-fmtconv
+    # Install all mamba packages in a single command for better dependency resolution
+    mamba install -y -c conda-forge jupyterlab vapoursynth wget \
+        -c tongyuantongyu vapoursynth-ffms2 vapoursynth-cycmunet vapoursynth-mvsfunc vapoursynth-fmtconv
     pip install VSGAN s3cmd
 }
 
