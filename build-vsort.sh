@@ -50,7 +50,7 @@ install_onnx() {
 }
 
 install_vsheaders () {
-    curl -s -o vs.zip -L https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R62.zip
+    curl -s -o vs.zip -L https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R71.zip
     unzip -q vs.zip
     mv vapoursynth-*/include vapoursynth/ && rm -r vs.zip vapoursynth-*/
 }
